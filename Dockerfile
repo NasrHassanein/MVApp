@@ -5,10 +5,10 @@ RUN apt-get update && apt-get install libcurl4-openssl-dev libssl-dev libxml2-de
 
 RUN mkdir -p /var/lib/shiny-server/bookmarks/shiny
 
-RUN R -e "install.packages('shiny')"
+RUN R -e "install.packages(c('shiny'))"
 
 ## ADD files from repo to path 
-COPY global.R  server.R ui.R /srv/shiny-server/
+COPY global.R server.R ui.R /srv/shiny-server/
 RUN chmod -R 755 /srv/shiny-server/
 
 ## Add config files
