@@ -8,6 +8,6 @@ services:
     container_name: mvapp
     restart: always
     volumes:
-      - /var/log:/var/log
+      - ./logs:/var/log
     ports:
       - "80:80"
